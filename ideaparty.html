@@ -1,26 +1,36 @@
-<!DOCTYPE html> 
-<html lang="ko-KR"> 
-<head> 
-<meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
-<meta charset="UTF-8"> 
-<title>Idea Party!</title> 
-<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> 
-<style> 
-*{margin:0;padding:0} 
-body{overflow:hidden} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한반복 영상 재생</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
 
-</style> 
-</head> 
-<body> 
-<iframe id="video" src="https://www.youtube.com/embed/15VV3CvYB5U?si=Jf3X4XZlRnFvgdRJ?autoplay=1&mute=1" title="YouTube video player" frameborder="0"  allowfullscreen></iframe> 
-<script> 
-$(function(){ 
-  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' }); 
-  // If you want to keep full screen on window resize 
-  $(window).resize(function(){ 
-    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' }); 
- }); 
-}); 
-</script> 
-</body> 
-</html> 
+        iframe {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="videoFrame" src="https://www.youtube.com/embed/15VV3CvYB5U?autoplay=1&loop=1&playlist=15VV3CvYB5U" frameborder="0" allowfullscreen></iframe>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var videoFrame = document.getElementById("videoFrame");
+
+            // Video ended event
+            videoFrame.addEventListener("ended", function () {
+                // Reload the video when it ends
+                videoFrame.src = "https://www.youtube.com/embed/15VV3CvYB5U?autoplay=1&loop=1&playlist=15VV3CvYB5U";
+            });
+        });
+    </script>
+</body>
+</html>
