@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="ko-KR"> 
+<head> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+<meta charset="UTF-8"> 
+<title>Idea Party!</title> 
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> 
+<style> 
+*{margin:0;padding:0} 
+body{overflow:hidden} 
+
+</style> 
+</head> 
+<body> 
+<iframe id="video" src="https://www.youtube.com/embed/15VV3CvYB5U?si=Jf3X4XZlRnFvgdRJ" title="YouTube video player" frameborder="0"  allowfullscreen></iframe> 
+<script> 
+$(function(){ 
+  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' }); 
+  // If you want to keep full screen on window resize 
+  $(window).resize(function(){ 
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' }); 
+ }); 
+}); 
+</script> 
+</body> 
+</html> 
