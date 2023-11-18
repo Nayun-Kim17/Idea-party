@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <iframe id="videoFrame" src="https://www.youtube.com/embed/X8XCB2WVh-k?si=Ssq0aJpf4cIJI5EH?autoplay=1&loop=1&playlist=15VV3CvYB5U" frameborder="0" allowfullscreen></iframe>
+    <iframe id="videoFrame" src="https://www.youtube.com/embed/X8XCB2WVh-k?autoplay=1&loop=1" frameborder="0" allowfullscreen>></iframe>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -28,7 +28,7 @@
             // Video ended event
             videoFrame.addEventListener("ended", function () {
                 // Reload the video when it ends
-                videoFrame.src = "https://www.youtube.com/embed/15VV3CvYB5U?autoplay=1&loop=1&playlist=15VV3CvYB5U";
+                videoFrame.src = "https://www.youtube.com/embed/X8XCB2WVh-k?autoplay=1&loop=1";
             });
         });
     </script>
